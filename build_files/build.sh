@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-dnf install -y tmux 
+dnf5 install -y tmux 
 
 # Use a COPR Example:
 #

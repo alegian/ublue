@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-dnf5 install -y tmux 
+dnf5 install -y tmux sway-config-fedora
 
 # Use a COPR Example:
 #

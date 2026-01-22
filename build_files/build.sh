@@ -2,7 +2,12 @@
 
 set -ouex pipefail
 
-dnf5 install -y tmux sway-config-fedora NetworkManager-openvpn nm-connection-editor network-manager-applet pavucontrol dolphin
+dnf5 install -y tmux sway-config-fedora NetworkManager-openvpn \
+  nm-connection-editor network-manager-applet pavucontrol dolphin \
+  blueman-applet btop ddcutil light adwaita-qt6
+
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+echo 'export QT_STYLE_OVERRIDE=adwaita-dark' >> ~/.bashrc
 
 # Use a COPR Example:
 #

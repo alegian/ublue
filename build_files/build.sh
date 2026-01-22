@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-dnf5 install -y tmux sway-config-fedora
+dnf5 install -y tmux sway-config-fedora networkmanager-openvpn nm-connection-editor network-manager-applet pavucontrol
 
 # Use a COPR Example:
 #

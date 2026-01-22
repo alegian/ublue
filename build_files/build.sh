@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-sudo dnf copr enable lbarrys/nwg-look
+sudo dnf copr enable tofik/nwg-shell
 
 dnf5 install -y tmux sway-config-fedora NetworkManager-openvpn \
   nm-connection-editor network-manager-applet pavucontrol dolphin \

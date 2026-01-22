@@ -4,9 +4,7 @@ set -ouex pipefail
 
 dnf5 install -y tmux sway-config-fedora NetworkManager-openvpn \
   nm-connection-editor network-manager-applet pavucontrol dolphin \
-  blueman-applet btop ddcutil light
-
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  blueman-applet btop ddcutil light qt6ct lxappearance alacritty
 
 # Use a COPR Example:
 #

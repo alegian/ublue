@@ -3,7 +3,7 @@
 curl -L -R -O https://www.lua.org/ftp/lua-5.5.0.tar.gz
 tar zxf lua-5.5.0.tar.gz
 cd lua-5.5.0
-make linux install
+make linux install INSTALL_TOP=/usr
 cd ..
 
 FILENAME="nvim-linux-x86_64.tar.gz"

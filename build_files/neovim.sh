@@ -8,10 +8,8 @@ curl -LO $URL
 
 tar xzf $FILENAME
 
-sudo mkdir -p /usr/local/bin /usr/local/lib /usr/local/share
-
-sudo cp -r $EXTRACT_DIR/bin/* /usr/local/bin/
-sudo cp -r $EXTRACT_DIR/lib/* /usr/local/lib/
-sudo cp -r $EXTRACT_DIR/share/* /usr/local/share/
+sudo cp -r $EXTRACT_DIR/bin/* /usr/bin/
+sudo cp -r $EXTRACT_DIR/lib/* /usr/lib/
+sudo cp -r $EXTRACT_DIR/share/* /usr/share/
 
 rm -rf $FILENAME $EXTRACT_DIR

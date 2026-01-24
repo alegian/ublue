@@ -2,12 +2,21 @@
 
 set -ouex pipefail
 
-sudo dnf copr enable -y tofik/nwg-shell
+sudo dnf5 copr enable -y tofik/nwg-shell
+sudo dnf5 copr enable -y swayfx/swayfx
+sudo dnf5 copr enable -y erikreider/SwayNotificationCenter
 
-dnf5 install -y sway-config-fedora NetworkManager-openvpn \
-  nm-connection-editor network-manager-applet pavucontrol dolphin \
-  blueman-applet btop ddcutil light qt6ct nwg-look alacritty
+dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn \
+  nm-connection-editor network-manager-applet pavucontrol wlogout \
+  blueman-applet btop ddcutil light qt6ct nwg-look alacritty ripgrep \
+  gammastep gvfs nautilus SwayNotificationCenter
 
-sudo dnf copr disable -y tofik/nwg-shell
+dnf5 remove sway
+
+sudo dnf5 copr disable -y tofik/nwg-shell
+sudo dnf5 copr disable -y swayfx/swayfx
+sudo dnf5 copr disable -y erikreider/SwayNotificationCenter
+
+bash "$(dirname "$0")/neovim.sh"
 
 systemctl enable podman.socket

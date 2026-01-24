@@ -1,10 +1,15 @@
 #!/bin/bash
 
-URL="https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz"
+curl -L -R -O https://www.lua.org/ftp/lua-5.5.0.tar.gz
+tar zxf lua-5.5.0.tar.gz
+cd lua-5.5.0
+make linux install
+cd ..
+
 FILENAME="nvim-linux-x86_64.tar.gz"
 EXTRACT_DIR="nvim-linux-x86_64"
 
-curl -LO $URL
+curl -LO https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz
 
 tar xzf $FILENAME
 

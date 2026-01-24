@@ -11,8 +11,6 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn \
   blueman-applet btop ddcutil light qt6ct nwg-look alacritty ripgrep \
   gammastep gvfs nautilus SwayNotificationCenter
 
-dnf5 remove sway
-
 sudo dnf5 copr disable -y tofik/nwg-shell
 sudo dnf5 copr disable -y swayfx/swayfx
 sudo dnf5 copr disable -y erikreider/SwayNotificationCenter

@@ -1,20 +1,23 @@
 #!/bin/bash
 
-curl -L -R -O https://www.lua.org/ftp/lua-5.5.0.tar.gz
-tar zxf lua-5.5.0.tar.gz
+DIRECTORY=temp-neovim
+mkdir -p $DIRECTORY && cd $DIRECTORY
+
+curl -LO https://www.lua.org/ftp/lua-5.5.0.tar.gz
+tar xzf lua-5.5.0.tar.gz
 cd lua-5.5.0
 make linux install INSTALL_TOP=/usr
 cd ..
 
-FILENAME="nvim-linux-x86_64.tar.gz"
-EXTRACT_DIR="nvim-linux-x86_64"
+curl -LO https://luarocks.org/releases/luarocks-3.13.0.tar.gz
+tar zxpf luarocks-3.13.0.tar.gz
+cd luarocks-3.13.0
+./configure --prefix=/usr && make && sudo make install
+cd ..
 
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz
+tar xzf nvim-linux-x86_64.tar.gz
+cp -r nvim-linux-x86_64/* /usr/
 
-tar xzf $FILENAME
-
-sudo cp -r $EXTRACT_DIR/bin/* /usr/bin/
-sudo cp -r $EXTRACT_DIR/lib/* /usr/lib/
-sudo cp -r $EXTRACT_DIR/share/* /usr/share/
-
-rm -rf $FILENAME $EXTRACT_DIR
+cd ..
+rm -rf $DIRECTORY

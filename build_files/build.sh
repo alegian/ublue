@@ -12,7 +12,7 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   nm-connection-editor network-manager-applet pavucontrol wlogout \
   blueman-applet btop ddcutil light qt6ct nwg-look alacritty ripgrep \
   gammastep gvfs nautilus SwayNotificationCenter chezmoi make gcc cliphist \
-  java-25-openjdk maven grim slurp yazi
+  java-25-openjdk maven grim slurp yazi age
 
 sudo dnf5 copr disable -y lihaohong/yazi
 sudo dnf5 copr disable -y alternateved/cliphist

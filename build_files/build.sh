@@ -7,13 +7,15 @@ sudo dnf5 copr enable -y swayfx/swayfx
 sudo dnf5 copr enable -y erikreider/SwayNotificationCenter
 sudo dnf5 copr enable -y alternateved/cliphist
 sudo dnf5 copr enable -y lihaohong/yazi
+sudo dnf5 copr enable -y eddsalkield/swaylock-effects
 
 dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   nm-connection-editor network-manager-applet pavucontrol wlogout \
   blueman-applet btop ddcutil light qt6ct nwg-look alacritty ripgrep \
   gammastep gvfs nautilus SwayNotificationCenter chezmoi make gcc cliphist \
-  java-25-openjdk maven grim slurp yazi age
+  java-25-openjdk maven grim slurp yazi age swaylock-effects
 
+sudo dnf5 copr disable -y eddsalkield/swaylock-effects
 sudo dnf5 copr disable -y lihaohong/yazi
 sudo dnf5 copr disable -y alternateved/cliphist
 sudo dnf5 copr disable -y erikreider/SwayNotificationCenter

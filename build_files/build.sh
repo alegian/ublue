@@ -20,6 +20,8 @@ sudo dnf5 copr disable -y erikreider/SwayNotificationCenter
 sudo dnf5 copr disable -y swayfx/swayfx
 sudo dnf5 copr disable -y tofik/nwg-shell
 
+cp "$(dirname "$0")/setup.sh /etc/profile.d/"
+
 bash "$(dirname "$0")/neovim.sh"
 
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin

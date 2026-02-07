@@ -23,7 +23,6 @@ sudo dnf5 copr disable -y swayfx/swayfx
 sudo dnf5 copr disable -y tofik/nwg-shell
 
 sudo dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/2.4
-sudo dnf install -y https://rpmfind.net/linux/mageia/distrib/cauldron/x86_64/media/core/release/aseprite-1.3.9.1-3.mga10.x86_64.rpm
 
 cp "$(dirname "$0")/setup.sh" /etc/profile.d/setup.sh
 

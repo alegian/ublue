@@ -1,7 +1,5 @@
 #!/bin/bash
 
-GRUB_FILE="/etc/default/grub"
+mkdir -p /usr/lib/bootc/kargs.d
 
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=\\"!Windows 2015\\""/' "$GRUB_FILE"
-
-grub-mkconfig -o /boot/grub/grub.cfg
+echo 'kargs = ["acpi_osi=\"!Windows 2015\""]' > /usr/lib/bootc/kargs.d/acpi-fix.toml

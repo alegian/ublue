@@ -27,6 +27,7 @@ sudo dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm
 cp "$(dirname "$0")/setup.sh" /etc/profile.d/setup.sh
 
 bash "$(dirname "$0")/neovim.sh"
+bash "$(dirname "$0")/aseprite.sh"
 
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin
 curl -fsSL https://proton.me/download/pass-cli/install.sh | bash

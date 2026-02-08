@@ -5,7 +5,7 @@ sudo dnf5 install -y gcc-c++ clang libcxx-devel cmake ninja-build libX11-devel l
 git clone --recursive --depth 1 https://github.com/aseprite/aseprite.git
 cd aseprite
 
-bash build.sh --auto
+bash build.sh --auto --norun
 
 cd ..
 

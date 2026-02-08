@@ -7,9 +7,8 @@ cd aseprite
 
 bash build.sh --auto --norun
 
+cp -R build/bin /usr/bin/aseprite-build
+ln -s /usr/bin/aseprite-build/aseprite /usr/bin/aseprite
+
 cd ..
-
-cp -R aseprite /usr/bin/aseprite
-ln -s /usr/bin/aseprite/build/bin/aseprite /usr/bin/aseprite
-
 rm -rf aseprite

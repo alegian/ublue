@@ -28,6 +28,7 @@ cp "$(dirname "$0")/setup.sh" /etc/profile.d/setup.sh
 
 bash "$(dirname "$0")/neovim.sh"
 bash "$(dirname "$0")/aseprite.sh"
+bash "$(dirname "$0")/ghcup.sh"
 
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin
 curl -fsSL https://proton.me/download/pass-cli/install.sh | bash

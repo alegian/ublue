@@ -29,12 +29,11 @@ sudo dnf install -y https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nau
 
 cp "$(dirname "$0")/setup.sh" /etc/profile.d/setup.sh
 
-bash "$(dirname "$0")/greetd.sh"
 bash "$(dirname "$0")/neovim.sh"
-bash "$(dirname "$0")/aseprite.sh"
+# bash "$(dirname "$0")/aseprite.sh"
 bash "$(dirname "$0")/ghcup.sh"
 
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin
 curl -fsSL https://proton.me/download/pass-cli/install.sh | bash
 
-systemctl enable podman.socket
+systemctl enable podman.socket greetd

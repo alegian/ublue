@@ -1,7 +1,8 @@
 #!/bin/bash
 
-cp -R "$(dirname "$0")/greetd" /etc/greetd
+cp -R "$(dirname "$0")/greetd" /etc
 
-sudo useradd -M -G video greeter
-sudo chmod -R go+r /etc/greetd/
+groupadd video
+useradd -M -G video greeter
+chmod -R go+r /etc/greetd/
 systemctl enable --now greetd

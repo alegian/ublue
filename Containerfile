@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 COPY users.conf /usr/lib/sysusers.d/
 COPY files.conf /usr/lib/tmpfiles.d/
-COPY greetd /etc/greetd
+#COPY greetd /etc/greetd
 
 FROM ghcr.io/ublue-os/base-nvidia:latest
 

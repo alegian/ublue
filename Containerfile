@@ -4,6 +4,8 @@ COPY build_files /
 COPY users.conf /usr/lib/sysusers.d/
 COPY files.conf /usr/lib/tmpfiles.d/
 COPY acpi-fix.toml /usr/lib/bootc/kargs.d/
+COPY setup.sh /etc/profile.d/
+COPY greetd /etc/greetd
 
 FROM ghcr.io/ublue-os/base-nvidia:latest
 

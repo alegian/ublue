@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -ouex pipefail
-
 sudo dnf5 install -y gcc-c++ clang libcxx-devel cmake ninja-build libX11-devel libXcursor-devel libXi-devel libXrandr-devel mesa-libGL-devel fontconfig-devel
 
 git clone --recursive --depth 1 https://github.com/aseprite/aseprite.git

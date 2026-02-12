@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -ouex pipefail
-
 DIRECTORY=temp-neovim
 mkdir -p $DIRECTORY && cd $DIRECTORY
 

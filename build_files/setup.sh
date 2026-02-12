@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -ouex pipefail
-
 setup() {
   mkdir -p ~/projects/alegian
   mkdir -p ~/projects/givelink

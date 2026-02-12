@@ -1,8 +1,8 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-#COPY users.conf /usr/lib/sysusers.d/
-#COPY files.conf /usr/lib/tmpfiles.d/
+COPY users.conf /usr/lib/sysusers.d/
+COPY files.conf /usr/lib/tmpfiles.d/
 COPY acpi-fix.toml /usr/lib/bootc/kargs.d/
 
 FROM ghcr.io/ublue-os/base-nvidia:latest

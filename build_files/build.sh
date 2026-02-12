@@ -23,8 +23,6 @@ sudo dnf5 copr disable -y swayfx/swayfx
 sudo dnf5 copr disable -y tofik/nwg-shell
 
 sudo dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/2.4
-sudo dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60034-fc43.x86_64.rpm
-sudo dnf install -y https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nautilus-3.9.5.60024-1.noarch.rpm
 
 cp "$(dirname "$0")/setup.sh" /etc/profile.d/setup.sh
 

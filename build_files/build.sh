@@ -2,8 +2,6 @@
 
 set -ouex pipefail
 
-bash "$(dirname "$0")/grub-hack.sh"
-
 sudo dnf5 copr enable -y tofik/nwg-shell
 sudo dnf5 copr enable -y swayfx/swayfx
 sudo dnf5 copr enable -y erikreider/SwayNotificationCenter

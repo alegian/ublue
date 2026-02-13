@@ -2,13 +2,13 @@
 FROM scratch AS ctx
 COPY build_files /
 
+FROM ghcr.io/ublue-os/base-nvidia:latest
+
 COPY --from=ctx users.conf /usr/lib/sysusers.d
 COPY --from=ctx files.conf /usr/lib/tmpfiles.d
 COPY --from=ctx acpi-fix.toml /usr/lib/bootc/kargs.d
 COPY --from=ctx setup.sh /etc/profile.d
 COPY --from=ctx greetd /etc/greetd
-
-FROM ghcr.io/ublue-os/base-nvidia:latest
 
 ### [IM]MUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to

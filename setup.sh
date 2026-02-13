@@ -8,6 +8,8 @@ setup() {
   flatpak install -y flathub com.brave.Browser org.telegram.desktop
 
   ssh-keygen
+
+  gtk-launch com.brave.Browser
 }
 
 chez() {

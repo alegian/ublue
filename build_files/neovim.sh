@@ -14,7 +14,7 @@ cd ..
 curl -LO https://luarocks.org/releases/luarocks-3.13.0.tar.gz
 tar zxpf luarocks-3.13.0.tar.gz
 cd luarocks-3.13.0
-./configure --prefix=/usr && make && sudo make install
+./configure --prefix=/usr && make && make install
 cd ..
 
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz

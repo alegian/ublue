@@ -26,7 +26,7 @@ dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nautilus-3.9.5.60024-1.noarch.rpm
 
 bash "$(dirname "$0")/neovim.sh"
-#bash "$(dirname "$0")/aseprite.sh"
+bash "$(dirname "$0")/aseprite.sh"
 
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin
 curl -fsSL https://proton.me/download/pass-cli/install.sh | bash

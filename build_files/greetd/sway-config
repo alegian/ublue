@@ -1,4 +1,5 @@
-exec "gtkgreet -l -s /etc/greetd/style.css -c 'cd $HOME && start-sway'; swaymsg exit"
+set $start_cmd "cd $HOME; start-sway; swaymsg exit"
+exec gtkgreet -l -s /etc/greetd/style.css -c "$start_cmd"
 
 bindsym Mod4+shift+e exec swaynag \
 	-t warning \

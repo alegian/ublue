@@ -31,5 +31,7 @@ bash "$(dirname "$0")/aseprite.sh"
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin
 curl -fsSL https://proton.me/download/pass-cli/install.sh | bash
 
+sudo sed -i '2i cd $HOME' /usr/bin/start-sway
+
 systemctl set-default graphical.target
 systemctl enable podman.socket greetd

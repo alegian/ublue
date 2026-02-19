@@ -1,6 +1,8 @@
 #!/bin/bash
 
 setup() {
+  sudo timedatectl set-timezone Europe/Athens
+
   mkdir -p ~/projects/alegian
   mkdir -p ~/projects/givelink
   mkdir -p ~/obsidian

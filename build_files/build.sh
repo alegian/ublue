@@ -33,10 +33,10 @@ curl -fsSL https://proton.me/download/pass-cli/install.sh | bash
 
 sudo sed -i '2i cd $HOME' /usr/bin/start-sway
 
-mkdir -p /usr/local/share/fonts/roboto-mono-nerd \
+mkdir -p /usr/share/fonts/roboto-mono-nerd \
   && curl -L -o /tmp/RobotoMono.zip \
      https://github.com/ryanoasis/nerd-fonts/releases/latest/download/RobotoMono.zip \
-  && unzip /tmp/RobotoMono.zip -d /usr/local/share/fonts/roboto-mono-nerd \
+  && unzip /tmp/RobotoMono.zip -d /usr/share/fonts/roboto-mono-nerd \
   && rm -f /tmp/RobotoMono.zip 
 
 systemctl set-default graphical.target

@@ -13,7 +13,7 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   blueman-applet btop ddcutil light qt6ct nwg-look alacritty ripgrep \
   gammastep gvfs nautilus SwayNotificationCenter chezmoi make gcc cliphist \
   java-21-openjdk maven grim slurp yazi age gtklock ImageMagick greetd \
-  gtkgreet
+  gtkgreet python3-tmuxp
 
 dnf5 copr disable -y lihaohong/yazi
 dnf5 copr disable -y alternateved/cliphist
@@ -32,6 +32,12 @@ export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin
 curl -fsSL https://proton.me/download/pass-cli/install.sh | bash
 
 sudo sed -i '2i cd $HOME' /usr/bin/start-sway
+
+mkdir -p /usr/local/share/fonts/roboto-mono-nerd \
+  && curl -L -o /tmp/RobotoMono.zip \
+     https://github.com/ryanoasis/nerd-fonts/releases/latest/download/RobotoMono.zip \
+  && unzip /tmp/RobotoMono.zip -d /usr/local/share/fonts/roboto-mono-nerd \
+  && rm -f /tmp/RobotoMono.zip 
 
 systemctl set-default graphical.target
 systemctl enable podman.socket greetd

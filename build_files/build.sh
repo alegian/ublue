@@ -21,7 +21,7 @@ dnf5 copr disable -y erikreider/SwayNotificationCenter
 dnf5 copr disable -y swayfx/swayfx
 dnf5 copr disable -y tofik/nwg-shell
 
-dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/2.4
+dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/2.5
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60034-fc43.x86_64.rpm
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nautilus-3.9.5.60024-1.noarch.rpm
 

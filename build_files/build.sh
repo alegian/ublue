@@ -7,6 +7,7 @@ dnf5 copr enable -y swayfx/swayfx
 dnf5 copr enable -y erikreider/SwayNotificationCenter
 dnf5 copr enable -y alternateved/cliphist
 dnf5 copr enable -y lihaohong/yazi
+dnf5 copr enable -y leloubil/wl-clip-persist
 
 dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   nm-connection-editor network-manager-applet pavucontrol wlogout \
@@ -15,6 +16,7 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   java-25-openjdk maven grim slurp yazi age gtklock ImageMagick greetd \
   gtkgreet python3-tmuxp flite adw-gtk3-theme wl-clip-persist
 
+dnf5 copr disable -y leloubil/wl-clip-persist
 dnf5 copr disable -y lihaohong/yazi
 dnf5 copr disable -y alternateved/cliphist
 dnf5 copr disable -y erikreider/SwayNotificationCenter

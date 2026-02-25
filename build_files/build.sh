@@ -13,7 +13,7 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   blueman-applet btop ddcutil light qt6ct nwg-look alacritty ripgrep \
   gammastep gvfs nautilus SwayNotificationCenter chezmoi make gcc cliphist \
   java-25-openjdk maven grim slurp yazi age gtklock ImageMagick greetd \
-  gtkgreet python3-tmuxp
+  gtkgreet python3-tmuxp flite adw-gtk3-theme wl-clip-persist
 
 dnf5 copr disable -y lihaohong/yazi
 dnf5 copr disable -y alternateved/cliphist

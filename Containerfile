@@ -4,6 +4,7 @@ COPY build_files /
 
 FROM ghcr.io/ublue-os/base-nvidia:latest
 
+COPY --from=ctx environment /etc
 COPY --from=ctx users.conf /usr/lib/sysusers.d
 COPY --from=ctx files.conf /usr/lib/tmpfiles.d
 COPY --from=ctx acpi-fix.toml /usr/lib/bootc/kargs.d

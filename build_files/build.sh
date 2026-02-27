@@ -2,8 +2,6 @@
 
 set -ouex pipefail
 
-dnf5 upgrade --refresh -y
-
 dnf5 copr enable -y tofik/nwg-shell
 dnf5 copr enable -y swayfx/swayfx
 dnf5 copr enable -y erikreider/SwayNotificationCenter

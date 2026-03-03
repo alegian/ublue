@@ -7,11 +7,27 @@ setup() {
   mkdir -p ~/projects/givelink
   mkdir -p ~/obsidian
 
-  mkdir -p ~/.local/share/fonts/roboto-mono-nerd \
-    && curl -L -o /tmp/RobotoMono.zip \
-       https://github.com/ryanoasis/nerd-fonts/releases/latest/download/RobotoMono.zip \
-    && unzip /tmp/RobotoMono.zip -d ~/.local/share/fonts/roboto-mono-nerd \
-    && rm -f /tmp/RobotoMono.zip 
+  mkdir -p ~/.local/share/fonts/nerd-fonts-symbols \
+    && curl -L -o /tmp/NerdFontsSymbolsOnly.zip \
+       https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip \
+    && unzip /tmp/NerdFontsSymbolsOnly.zip -d ~/.local/share/fonts/nerd-fonts-symbols \
+    && rm -f /tmp/NerdFontsSymbolsOnly.zip
+
+  mkdir -p ~/.local/share/fonts/roboto-mono \
+    && curl -L -o /tmp/roboto-mono.zip \
+       https://github.com/googlefonts/RobotoMono/archive/refs/tags/v3.001.zip \
+    && unzip /tmp/roboto-mono.zip -d ~/.local/share/fonts/roboto-mono \
+    && rm -f /tmp/roboto-mono.zip
+
+  mkdir -p ~/.local/share/fonts/roboto-mono \
+    && cd ~/.local/share/fonts/roboto-mono \
+    && curl -LO https://github.com/google/fonts/raw/main/apache/robotomono/RobotoMono-Regular.ttf \
+    && curl -LO https://github.com/google/fonts/raw/main/apache/robotomono/RobotoMono-Italic.ttf \
+    && curl -LO https://github.com/google/fonts/raw/main/apache/robotomono/RobotoMono-Bold.ttf \
+    && curl -LO https://github.com/google/fonts/raw/main/apache/robotomono/RobotoMono-BoldItalic.ttf
+
+  curl -L -o ~/.local/share/fonts/NotoColorEmoji.ttf \
+       https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
 
   flatpak install -y flathub com.brave.Browser org.telegram.desktop
 

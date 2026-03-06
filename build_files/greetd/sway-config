@@ -1,4 +1,3 @@
-for_window [app_id="gtkgreet"] focus
-exec 'sh -c "gtkgreet -l -s /etc/greetd/style.css; swaymsg exit"'
+exec 'sh -c "gtkgreet -s /etc/greetd/style.css; swaymsg exit"'
 
 include /etc/sway/config.d/*

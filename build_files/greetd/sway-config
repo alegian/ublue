@@ -1,6 +1,3 @@
-exec "gtkgreet -l -s /etc/greetd/style.css; swaymsg exit"
-for_window [app_id=.*] focus
-
 bindsym Mod4+shift+e exec swaynag \
 	-t warning \
 	-m 'What do you want to do?' \

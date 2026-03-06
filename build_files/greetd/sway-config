@@ -1,3 +1,5 @@
+default_border pixel 0
+
 exec 'sh -c "gtkgreet -s /etc/greetd/style.css; swaymsg exit"'
 
 include /etc/sway/config.d/*

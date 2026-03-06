@@ -1,9 +1,11 @@
 #!/bin/bash
 
 sway --unsupported-gpu --config /etc/greetd/sway-config &
-while ! swaymsg -t get_version >/dev/null 2>&1; do
+pid=$!
+
+while ! sock="$(sway --get-socketpath 2>/dev/null)"; do
     sleep 0.05
 done
 
-swaymsg exec "gtkgreet -l -s /etc/greetd/style.css; swaymsg exit"
-wait
+SWAYSOCK="$sock" swaymsg exec 'sh -c "gtkgreet -l -s /etc/greetd/style.css; swaymsg exit"'
+wait "$pid"

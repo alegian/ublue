@@ -15,7 +15,7 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   gammastep gvfs nautilus SwayNotificationCenter chezmoi make gcc cliphist \
   java-25-openjdk maven grim slurp yazi age gtklock ImageMagick greetd \
   gtkgreet python3-tmuxp flite wl-clip-persist rofimoji postgresql \
-  gnome-keyring
+  gnome-keyring nmap
 
 dnf5 copr disable -y leloubil/wl-clip-persist
 dnf5 copr disable -y lihaohong/yazi

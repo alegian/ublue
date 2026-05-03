@@ -10,7 +10,7 @@ COPY --from=ctx files.conf /usr/lib/tmpfiles.d
 COPY --from=ctx acpi-fix.toml /usr/lib/bootc/kargs.d
 COPY --from=ctx setup.sh /etc/profile.d
 COPY --from=ctx greetd /etc/greetd
-COPY --from=ctx dns.conf /etc/NetworkManager/conf.d
+COPY --from=ctx resolved.conf /etc/systemd
 
 ### [IM]MUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to

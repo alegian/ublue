@@ -18,6 +18,8 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   gnome-keyring nmap cronie gh gtk3-devel mesa-demos zlib-ng-compat.i686 \
   bzip2-libs.i686
 
+dnf5 install https://github.com/facebook/watchman/releases/download/v2026.05.25.00/watchman-20260524.093149.0-1.fc42.x86_64.rpm
+
 dnf5 copr disable -y leloubil/wl-clip-persist
 dnf5 copr disable -y lihaohong/yazi
 dnf5 copr disable -y alternateved/cliphist

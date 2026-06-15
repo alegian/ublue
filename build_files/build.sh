@@ -25,6 +25,19 @@ dnf5 copr disable -y erikreider/SwayNotificationCenter
 dnf5 copr disable -y swayfx/swayfx
 dnf5 copr disable -y tofik/nwg-shell
 
+sudo tee /etc/yum.repos.d/smallstep.repo >/dev/null <<'EOF'
+[smallstep]
+name=Smallstep
+baseurl=https://packages.smallstep.com/stable/fedora/
+enabled=1
+repo_gpgcheck=0
+gpgcheck=1
+gpgkey=https://packages.smallstep.com/keys/smallstep-0x889B19391F774443.gpg
+EOF
+
+sudo dnf5 makecache
+sudo dnf5 install step-cli
+
 dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/latest
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60034-fc43.x86_64.rpm
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nautilus-3.9.5.60024-1.noarch.rpm

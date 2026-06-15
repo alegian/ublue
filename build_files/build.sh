@@ -36,7 +36,7 @@ gpgkey=https://packages.smallstep.com/keys/smallstep-0x889B19391F774443.gpg
 EOF
 
 sudo dnf5 makecache
-sudo dnf5 install step-cli
+sudo dnf5 install -y step-cli
 
 dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/latest
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60034-fc43.x86_64.rpm

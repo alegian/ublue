@@ -8,7 +8,6 @@ dnf5 copr enable -y erikreider/SwayNotificationCenter
 dnf5 copr enable -y alternateved/cliphist
 dnf5 copr enable -y lihaohong/yazi
 dnf5 copr enable -y leloubil/wl-clip-persist
-dnf5 copr enable -y lyndonm/polychromatic
 
 dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   nm-connection-editor network-manager-applet pavucontrol wlogout \
@@ -17,9 +16,8 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   java-25-openjdk maven grim slurp yazi age gtklock ImageMagick greetd \
   gtkgreet python3-tmuxp flite wl-clip-persist rofimoji postgresql \
   gnome-keyring nmap cronie gh gtk3-devel mesa-demos zlib-ng-compat.i686 \
-  bzip2-libs.i686 chromium git-delta polychromatic
+  bzip2-libs.i686 chromium git-delta
 
-dnf5 copr disable -y lyndonm/polychromatic
 dnf5 copr disable -y leloubil/wl-clip-persist
 dnf5 copr disable -y lihaohong/yazi
 dnf5 copr disable -y alternateved/cliphist
@@ -27,7 +25,7 @@ dnf5 copr disable -y erikreider/SwayNotificationCenter
 dnf5 copr disable -y swayfx/swayfx
 dnf5 copr disable -y tofik/nwg-shell
 
-sudo tee /etc/yum.repos.d/smallstep.repo >/dev/null <<'EOF'
+tee /etc/yum.repos.d/smallstep.repo >/dev/null <<'EOF'
 [smallstep]
 name=Smallstep
 baseurl=https://packages.smallstep.com/stable/fedora/
@@ -37,8 +35,8 @@ gpgcheck=1
 gpgkey=https://packages.smallstep.com/keys/smallstep-0x889B19391F774443.gpg
 EOF
 
-sudo dnf5 makecache
-sudo dnf5 install -y step-cli
+dnf5 makecache
+dnf5 install -y step-cli
 
 dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/latest
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60034-fc43.x86_64.rpm
@@ -48,10 +46,8 @@ dnf5 install -y \
     /akmods/kmods/*openrazer*.rpm \
     /akmods/common/*openrazer*.rpm
 
-curl -Lo /etc/yum.repos.d/hardware:razer.repo \
-    https://openrazer.github.io/hardware:razer.repo
-
-dnf5 install -y openrazer-daemon
+dnf5 config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo
+dnf5 install -y openrazer-daemon polychromatic
 
 bash "$(dirname "$0")/neovim.sh"
 bash "$(dirname "$0")/aseprite.sh"
@@ -59,7 +55,7 @@ bash "$(dirname "$0")/aseprite.sh"
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin
 curl -fsSL https://proton.me/download/pass-cli/install.sh | bash
 
-sudo sed -i '2i cd $HOME' /usr/bin/start-sway
+sed -i '2i cd $HOME' /usr/bin/start-sway
 
 systemctl set-default graphical.target
 systemctl enable podman.socket greetd

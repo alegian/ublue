@@ -1,1 +1,1 @@
-kargs = ["acpi_osi=\"!Windows 2015\"", "usbhid.mousepoll=2"]
+kargs = ["acpi_osi=\"!Windows 2015\""]

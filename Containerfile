@@ -1,7 +1,7 @@
+ARG FEDORA_VERSION=44
+
 FROM scratch AS ctx
 COPY build_files /
-
-ARG FEDORA_VERSION=44
 
 FROM ghcr.io/ublue-os/akmods:main-${FEDORA_VERSION} AS akmods
 

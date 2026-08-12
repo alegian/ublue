@@ -8,6 +8,7 @@ dnf5 copr enable -y erikreider/SwayNotificationCenter
 dnf5 copr enable -y alternateved/cliphist
 dnf5 copr enable -y lihaohong/yazi
 dnf5 copr enable -y leloubil/wl-clip-persist
+dnf5 copr enable -y lyndonm/polychromatic
 
 dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   nm-connection-editor network-manager-applet pavucontrol wlogout \
@@ -16,8 +17,9 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   java-25-openjdk maven grim slurp yazi age gtklock ImageMagick greetd \
   gtkgreet python3-tmuxp flite wl-clip-persist rofimoji postgresql \
   gnome-keyring nmap cronie gh gtk3-devel mesa-demos zlib-ng-compat.i686 \
-  bzip2-libs.i686 chromium git-delta
+  bzip2-libs.i686 chromium git-delta polychromatic
 
+dnf5 copr disable -y lyndonm/polychromatic
 dnf5 copr disable -y leloubil/wl-clip-persist
 dnf5 copr disable -y lihaohong/yazi
 dnf5 copr disable -y alternateved/cliphist
@@ -41,6 +43,15 @@ sudo dnf5 install -y step-cli
 dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/latest
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60034-fc43.x86_64.rpm
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nautilus-3.9.5.60024-1.noarch.rpm
+
+dnf5 install -y \
+    /akmods/kmods/*openrazer*.rpm \
+    /akmods/common/*openrazer*.rpm
+
+curl -Lo /etc/yum.repos.d/hardware:razer.repo \
+    https://openrazer.github.io/hardware:razer.repo
+
+dnf5 install -y openrazer-daemon
 
 bash "$(dirname "$0")/neovim.sh"
 bash "$(dirname "$0")/aseprite.sh"

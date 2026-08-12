@@ -1,8 +1,11 @@
-# Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
 
-FROM ghcr.io/ublue-os/base-nvidia:latest
+ARG FEDORA_VERSION=44
+
+FROM ghcr.io/ublue-os/akmods:main-${FEDORA_VERSION} AS akmods
+
+FROM ghcr.io/ublue-os/base-nvidia:${FEDORA_VERSION}
 
 COPY --from=ctx environment /etc
 COPY --from=ctx users.conf /usr/lib/sysusers.d
@@ -24,6 +27,7 @@ COPY --from=ctx resolved.conf /etc/systemd
 # RUN rm /opt && mkdir /opt
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
+    --mount=type=bind,from=akmods,source=/rpms,target=/akmods \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \

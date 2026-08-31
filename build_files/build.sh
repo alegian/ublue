@@ -16,7 +16,7 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   java-25-openjdk maven grim slurp yazi age gtklock ImageMagick greetd \
   gtkgreet python3-tmuxp flite wl-clip-persist rofimoji postgresql \
   gnome-keyring nmap cronie gh gtk3-devel mesa-demos zlib-ng-compat.i686 \
-  bzip2-libs.i686 chromium git-delta
+  bzip2-libs.i686 chromium git-delta libxcrypt-compat
 
 dnf5 copr disable -y leloubil/wl-clip-persist
 dnf5 copr disable -y lihaohong/yazi

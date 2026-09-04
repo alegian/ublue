@@ -46,7 +46,8 @@ dnf5 install -y \
     /akmods/kmods/*openrazer*.rpm \
     /akmods/common/*openrazer*.rpm
 
-dnf5 install -y polychromatic
+dnf5 config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo
+dnf5 install -y openrazer-daemon polychromatic
 
 bash "$(dirname "$0")/neovim.sh"
 

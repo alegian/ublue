@@ -46,9 +46,6 @@ dnf5 install -y \
     /akmods/kmods/*openrazer*.rpm \
     /akmods/common/*openrazer*.rpm
 
-dnf5 config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo
-dnf5 install -y polychromatic
-
 bash "$(dirname "$0")/neovim.sh"
 
 export PROTON_PASS_CLI_INSTALL_DIR=/usr/bin

@@ -46,7 +46,18 @@ dnf5 install -y \
     /akmods/kmods/*openrazer*.rpm \
     /akmods/common/*openrazer*.rpm
 
-dnf5 config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo
+# Use the same akmods-compatible packaging as the prebuilt modules above.
+tee /etc/yum.repos.d/openrazer-terra.repo >/dev/null <<'EOF'
+[openrazer-terra]
+name=Terra OpenRazer
+baseurl=https://repos.fyralabs.com/terra$releasever
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://raw.githubusercontent.com/terrapkg/packages/f$releasever/anda/terra/gpg-keys/RPM-GPG-KEY-terra$releasever
+includepkgs=openrazer*,python3-openrazer
+EOF
+
 dnf5 install -y openrazer-daemon
 
 bash "$(dirname "$0")/neovim.sh"

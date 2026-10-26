@@ -42,7 +42,7 @@ dnf5 makecache
 dnf5 install -y step-cli
 
 dnf install -y https://api2.cursor.sh/updates/download/golden/linux-x64-rpm/cursor/latest
-dnf install -y https://cdn.insynchq.com/builds/linux/3.9.8.60034/insync-3.9.8.60034-fc43.x86_64.rpm
+dnf install -y https://cdn.insynchq.com/builds/linux/3.9.11.60043/insync-3.9.11.60043-fc44.x86_64.rpm
 dnf install -y https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nautilus-3.9.5.60024-1.noarch.rpm
 
 dnf5 install -y \

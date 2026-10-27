@@ -19,7 +19,7 @@ dnf5 install -y sway-config-fedora swayfx NetworkManager-openvpn golang \
   bzip2-libs.i686 chromium git-delta libxcrypt-compat sox gcc-c++ cmake \
   python3-pip ibus-devel gobject-introspection-devel python3-devel \
   portaudio-devel python3-virtualenv vulkan-tools  vulkan-loader-devel glslc \
-  patchelf fuse-libs
+  patchelf fuse-libs tree-sitter-cli
 
 dnf5 copr disable -y leloubil/wl-clip-persist
 dnf5 copr disable -y lihaohong/yazi

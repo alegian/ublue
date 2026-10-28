@@ -1,9 +1,9 @@
-#!/bin/bash
-
-set -ouex pipefail
+#!/usr/bin/env bash
+set -euo pipefail
 
 DIRECTORY=temp-neovim
-mkdir -p $DIRECTORY && cd $DIRECTORY
+mkdir -p "$DIRECTORY"
+cd "$DIRECTORY"
 
 curl -LO https://www.lua.org/ftp/lua-5.5.1.tar.gz
 tar xzf lua-5.5.1.tar.gz
@@ -14,7 +14,9 @@ cd ..
 curl -LO https://luarocks.org/releases/luarocks-3.13.0.tar.gz
 tar zxpf luarocks-3.13.0.tar.gz
 cd luarocks-3.13.0
-./configure --prefix=/usr && make && make install
+./configure --prefix=/usr
+make
+make install
 cd ..
 
 curl -LO https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.tar.gz
@@ -22,4 +24,4 @@ tar xzf nvim-linux-x86_64.tar.gz
 cp -r nvim-linux-x86_64/* /usr/
 
 cd ..
-rm -rf $DIRECTORY
+rm -rf "$DIRECTORY"

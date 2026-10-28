@@ -147,9 +147,7 @@ modules:
         - NerdFontsSymbolsOnly
       google-fonts:
         - Roboto Mono
-      url-fonts:
-        - name: NotoColorEmoji
-          url: https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
+        - Noto Color Emoji
 
   - type: kargs
     kargs:

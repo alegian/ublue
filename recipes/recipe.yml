@@ -149,7 +149,7 @@ modules:
 
   - type: kargs
     kargs:
-      - acpi_osi="!Windows 2015"
+      - 'acpi_osi=\"!Windows 2015\"'
 
   - type: script
     scripts:

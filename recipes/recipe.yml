@@ -17,6 +17,14 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  - type: containerfile
+    snippets:
+      - >-
+        RUN --mount=type=bind,from=ghcr.io/ublue-os/akmods:main-44,source=/rpms,target=/tmp/akmods
+        dnf5 install -y --setopt=install_weak_deps=False
+        /tmp/akmods/kmods/*openrazer*.rpm
+        /tmp/akmods/common/*openrazer*.rpm
+
   - type: dnf
     repos:
       files:
@@ -142,10 +150,6 @@ modules:
       url-fonts:
         - name: NotoColorEmoji
           url: https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
-
-  - type: akmods
-    install:
-      - openrazer
 
   - type: kargs
     kargs:

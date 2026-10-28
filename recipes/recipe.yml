@@ -25,12 +25,6 @@ modules:
       packages:
         - micro
         - starship
-    remove:
-      packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
     configurations:
@@ -38,12 +32,29 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
+          - app.polychromatic.controller
+          - com.brave.Browser
+          - com.discordapp.Discord
+          - com.github.ahrm.sioyek
+          - com.obsproject.Studio
+          - com.protonvpn.www
+          - com.spotify.Client
+          - com.stremio.Stremio
+          - com.valvesoftware.Steam
+          - com.visualstudio.code
+          - io.dbeaver.DBeaverCommunity
+          - io.github.shiftey.Desktop
+          - net.blockbench.Blockbench
+          - org.blender.Blender
+          - org.fedoraproject.MediaWriter
+          - org.gimp.GIMP
+          - org.prismlauncher.PrismLauncher
+          - org.qbittorrent.qBittorrent
+          - org.telegram.desktop
+          - org.videolan.VLC
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: akmods
-    nvidia-driver: nvidia
     install:
       - openrazer
 

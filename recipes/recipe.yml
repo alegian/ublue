@@ -142,4 +142,18 @@ modules:
     kargs:
       - acpi_osi="!Windows 2015"
 
+  - type: script
+    scripts:
+      - neovim.sh
+      - proton-pass-cli.sh
+      - sway-startup.sh
+    snippets:
+      - systemctl set-default graphical.target
+
+  - type: systemd
+    system:
+      enabled:
+        - podman.socket
+        - greetd.service
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

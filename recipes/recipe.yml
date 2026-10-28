@@ -134,6 +134,16 @@ modules:
           - org.videolan.VLC
       - scope: user # Also add Flathub user repo, but no user packages
 
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto Mono
+      url-fonts:
+        - name: NotoColorEmoji
+          url: https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
+
   - type: akmods
     install:
       - openrazer

@@ -1,0 +1,8 @@
+[openrazer-terra]
+name=Terra OpenRazer
+baseurl=https://repos.fyralabs.com/terra$releasever
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://raw.githubusercontent.com/terrapkg/packages/f$releasever/anda/terra/gpg-keys/RPM-GPG-KEY-terra$releasever
+includepkgs=openrazer*,python3-openrazer

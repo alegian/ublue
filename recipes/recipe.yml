@@ -38,6 +38,7 @@ modules:
         - alternateved/cliphist
         - lihaohong/yazi
         - leloubil/wl-clip-persist
+        - claaj/typst
     install:
       packages:
         - micro
@@ -112,6 +113,7 @@ modules:
         - https://cdn.insynchq.com/builds/linux/3.9.11.60043/insync-3.9.11.60043-fc44.x86_64.rpm
         - https://cdn.insynchq.com/builds/linux/3.9.5.60024/insync-nautilus-3.9.5.60024-1.noarch.rpm
         - openrazer-daemon
+        - typst
 
   - type: default-flatpaks
     configurations:

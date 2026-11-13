@@ -22,20 +22,20 @@ modules:
     install: []
     nvidia-driver: nvidia
 
-  - type: dnf
-    repos:
-      files:
-        - openrazer-terra.repo
-
-  - type: akmods
-    base: main
-    install:
-      - openrazer
+  - type: containerfile
+    snippets:
+      - >-
+        RUN --mount=type=bind,from=ghcr.io/ublue-os/akmods:main-44,source=/rpms,target=/tmp/akmods
+        dnf5 install -y --setopt=install_weak_deps=False
+        --disable-repo='copr:copr.fedorainfracloud.org:ublue-os:akmods'
+        /tmp/akmods/kmods/*openrazer*.rpm
+        /tmp/akmods/common/*openrazer*.rpm
 
   - type: dnf
     repos:
       files:
         - smallstep.repo
+        - openrazer-terra.repo
       copr:
         - atim/starship
         - tofik/nwg-shell

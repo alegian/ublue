@@ -20,7 +20,7 @@ modules:
   - type: akmods
     base: main
     install: []
-    nvidia-driver: nvidia
+    nvidia-driver: nvidia-open
 
   - type: containerfile
     snippets:
@@ -174,5 +174,7 @@ modules:
       enabled:
         - podman.socket
         - greetd.service
+
+  - type: initramfs
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

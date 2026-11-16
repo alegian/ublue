@@ -17,6 +17,22 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  # Align Mesa with negativo17 before NVIDIA pulls in i686 dependencies,
+  # following BlueBuild's base image recipe.
+  - type: dnf
+    repos:
+      nonfree: negativo17
+    replace:
+      - from-repo: fedora-multimedia
+        packages:
+          - mesa-dri-drivers
+          - mesa-filesystem
+          - mesa-libEGL
+          - mesa-libGL
+          - mesa-libgbm
+          - mesa-va-drivers
+          - mesa-vulkan-drivers
+
   - type: akmods
     base: main
     install: []

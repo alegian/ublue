@@ -3,6 +3,11 @@
 setup() {
   sudo timedatectl set-timezone Europe/Athens
 
+  if ! grep -q '^input:' /etc/group; then
+    grep '^input:' /usr/lib/group | sudo tee -a /etc/group
+  fi
+  sudo usermod -aG input "$(id -un)"
+
   mkdir -p ~/projects/alegian
   mkdir -p ~/projects/givelink
   mkdir -p ~/obsidian
